@@ -3,8 +3,8 @@
 Team Name - Team Globus
 
 Group Members - 
-Jack Zhu  
-Virag Bhanderi  
-Afroz Inamdar 
-Alireza Mahin parvar  
-Kanupriya Sanjay Agrawal  
+- Jack Zhu  
+- Virag Bhanderi  
+- Afroz Inamdar 
+- Alireza Mahin parvar  
+- Kanupriya Sanjay Agrawal  
