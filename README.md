@@ -8,3 +8,6 @@ Group Members -
 - Afroz Inamdar 
 - Alireza Mahin parvar  
 - Kanupriya Sanjay Agrawal  
+
+https://www.kaggle.com/datasets/bigkizd/iam-dataset
+https://www.kaggle.com/c/walmart-recruiting-store-sales-forecasting/data?select=stores.csv
