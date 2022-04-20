@@ -10,8 +10,5 @@ Group Members -
 - Alireza Mahin parvar
 - Kanupriya Sanjay Agrawal
 
-https://www.kaggle.com/datasets/bigkizd/iam-dataset
-
-https://www.kaggle.com/c/walmart-recruiting-store-sales-forecasting/data?select=stores.csv
 
 https://www.kaggle.com/datasets/samarthagarwal23/spelling-mistake-data-1mn
