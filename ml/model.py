@@ -48,6 +48,12 @@ Summary:
 
 just call the class and fill in the input_string
 
+import: 
+
+from ml.model import textCorrectionModel
+
+running:
+
 input_string = "wadeye residents eskeing return to outstaitosn"
 model = textCorrectionModel()
 print("model prediction: \n", model.predict(input_string))
