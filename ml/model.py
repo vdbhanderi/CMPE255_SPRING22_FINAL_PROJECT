@@ -3,8 +3,6 @@ import tensorflow as tf
 from tensorflow import keras
 from keras.preprocessing.sequence import pad_sequences
 import numpy as np
-import os
-os.environ["CUDA_VISIBLE_DEVICES"] = "-1"
 
 
 class textCorrectionModel:
@@ -15,17 +13,17 @@ class textCorrectionModel:
 
     def _loadModel(self) -> None:
         self.model = keras.models.load_model(
-            'char_level_accuracy_84_3lstm_rnn', compile=False)
+            'char_level_accuracy_84_3lstm_rnn')
 
-    def deTokenize(self, text_tokenizer, prediction):
+    def deTokenize(self, tokenizer, prediction):
         index_to_words = {id: word for word,
-                          id in text_tokenizer.word_index.items()}
+                          id in tokenizer.word_index.items()}
         index_to_words[0] = ''
         pre_index = np.argmax(prediction, 1)
         return ''.join(index_to_words[word] for word in pre_index)
 
-    def predict(self):
-        test_string = ["wadeye residents eskeing return to outstaitosn"]
+    def predict(self, test_string):
+        test_string = [test_string]
         with open('g_text_tokenizer.json') as tokenizer:
             tokenizer_data = json.load(tokenizer)
             g_text_tokenizer = tf.keras.preprocessing.text.tokenizer_from_json(
@@ -40,10 +38,20 @@ class textCorrectionModel:
             tokenizer_data = json.load(tokenizer)
             text_tokenizer = tf.keras.preprocessing.text.tokenizer_from_json(
                 tokenizer_data)
-        detoken_prediction = self.deTokenize(text_tokenizer, prediction)
+        detoken_prediction = self.deTokenize(text_tokenizer, prediction[0])
 
         return detoken_prediction
 
 
+"""
+Summary:
+
+just call the class and fill in the input_string
+
+input_string = "wadeye residents eskeing return to outstaitosn"
 model = textCorrectionModel()
-print(model.predict())
+print("model prediction: \n", model.predict(input_string))
+
+Returns:
+    _type_: String
+"""
