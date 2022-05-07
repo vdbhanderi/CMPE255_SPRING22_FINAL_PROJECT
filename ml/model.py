@@ -13,7 +13,7 @@ class textCorrectionModel:
 
     def _loadModel(self) -> None:
         self.model = keras.models.load_model(
-            'char_level_accuracy_84_3lstm_rnn')
+            'ml/char_level_accuracy_84_3lstm_rnn')
 
     def deTokenize(self, tokenizer, prediction):
         index_to_words = {id: word for word,
@@ -24,7 +24,7 @@ class textCorrectionModel:
 
     def predict(self, test_string):
         test_string = [test_string]
-        with open('g_text_tokenizer.json') as tokenizer:
+        with open('ml/g_text_tokenizer.json') as tokenizer:
             tokenizer_data = json.load(tokenizer)
             g_text_tokenizer = tf.keras.preprocessing.text.tokenizer_from_json(
                 tokenizer_data)
@@ -34,7 +34,7 @@ class textCorrectionModel:
             test_sample, maxlen=74, padding='post')
 
         prediction = self.model.predict(test_sample)
-        with open('text_tokenizer.json') as tokenizer:
+        with open('ml/text_tokenizer.json') as tokenizer:
             tokenizer_data = json.load(tokenizer)
             text_tokenizer = tf.keras.preprocessing.text.tokenizer_from_json(
                 tokenizer_data)
