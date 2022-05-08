@@ -16,7 +16,8 @@ https://www.kaggle.com/datasets/samarthagarwal23/spelling-mistake-data-1mn
 ## Instruction
 
 ```
-pip install -r requirement.txt
+pip install pipenv
 pipenv shell
+pip install -r requirement.txt
 python app.py
 ```
