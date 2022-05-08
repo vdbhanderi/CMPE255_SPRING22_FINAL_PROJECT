@@ -5,7 +5,7 @@ from keras.preprocessing.sequence import pad_sequences
 import numpy as np
 import os
 os.environ["CUDA_VISIBLE_DEVICES"] = "-1"
-
+os.environ['TF_CPP_MIN_LOG_LEVEL']='3'
 class textCorrectionModel:
     def __init__(self) -> None:
         self.max_length = 74
