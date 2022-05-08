@@ -3,7 +3,8 @@ import tensorflow as tf
 from tensorflow import keras
 from keras.preprocessing.sequence import pad_sequences
 import numpy as np
-
+import os
+os.environ["CUDA_VISIBLE_DEVICES"] = "-1"
 
 class textCorrectionModel:
     def __init__(self) -> None:
