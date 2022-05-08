@@ -42,9 +42,6 @@ class textCorrectionModel:
 
         return detoken_prediction
 
-input_string = "wadeye residents eskeing return to outstaitosn"
-model = textCorrectionModel()
-print("model prediction: \n", model.predict(input_string))
 """
 Summary:
 
