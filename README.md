@@ -12,3 +12,11 @@ Group Members -
 
 
 https://www.kaggle.com/datasets/samarthagarwal23/spelling-mistake-data-1mn
+
+## Instruction
+
+```
+pipenv install -r requirement.txt
+pipenv shell
+python app.py
+```

@@ -1,2 +1,4 @@
 tensorflow==2.8.0
 numpy==1.21.6
+Flask==2.1.2
+flask-ngrok==0.0.25
