@@ -4,7 +4,7 @@ Team Name - Team Globus
 
 Group Members -
 
-- Jack Zhu
+- Jack Zhu (JJLZ21)
 - Virag Bhanderi
 - Afroz Inamdar
 - Alireza Mahin parvar
