@@ -8,7 +8,12 @@ import pickle
 
 app = Flask(__name__)
 run_with_ngrok(app)
-model = pickle.load(open('model.pkl', 'rb'))
+# model = pickle.load(open('model.pkl', 'rb'))
+
+from ml.model import textCorrectionModel
+input_string = "wadeye residents eskeing return to outstaitosn"
+model = textCorrectionModel()
+print("model prediction: \n", model.predict(input_string))
 
 @app.route('/')
 def home():
