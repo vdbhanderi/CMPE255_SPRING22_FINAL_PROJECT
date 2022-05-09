@@ -21,24 +21,24 @@ def home():
 
 @app.route('/predict',methods=['POST'])
 def predict():
-
     string_features = [x for x in request.form.values()]
-    #final_features = [np.array(string_features)]
-    prediction = model.predict(string_features)
-
-    # output = round(prediction[0], 2)
-
-    return render_template('index.html', prediction_text='Correct sentence should be $ {}'.format(prediction))
+    # print("inside predict -----string features", string_features)
+    prediction = model.predict(string_features[0])
+    # print("inside predict -----prediction", prediction)
+    return render_template('index.html', prediction_text='Correct sentence should be: {}'.format(prediction))
 
 @app.route('/results',methods=['POST'])
 def results():
 
     data = request.get_json(force=True)
+    # print("inside results -----data", data)
     prediction = model.predict([np.array(list(data.values()))])
-
-    # output = prediction[0]
+    # print("inside results -----prediction", prediction)
+    # print("inside results -----jsonify", jsonify(prediction))
     return jsonify(prediction)
 
 if __name__ == "__main__":
     app.debug =True
     app.run()
+
+
