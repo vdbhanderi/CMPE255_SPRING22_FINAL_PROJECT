@@ -22,7 +22,7 @@ def home():
 @app.route('/predict',methods=['POST'])
 def predict():
 
-    string_features = [String(x) for x in request.form.values()]
+    string_features = [x for x in request.form.values()]
     #final_features = [np.array(string_features)]
     prediction = model.predict(string_features)
 
