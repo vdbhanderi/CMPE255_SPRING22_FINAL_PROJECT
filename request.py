@@ -20,10 +20,10 @@ Returns:
     _type_: String
 """
 
-# TODO: just change the input_string to other string
-input_string = "wadeye residents eskeing return to outstaitosn"
-model = textCorrectionModel()
-print("model prediction: \n", model.predict(input_string))
+# # TODO: just change the input_string to other string
+# input_string = "wadeye residents eskeing return to outstaitosn"
+# model = textCorrectionModel()
+# print("model prediction: \n", model.predict(input_string))
 
 
 url = 'http://localhost:4000/results'
