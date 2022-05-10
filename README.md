@@ -59,6 +59,42 @@ Final accuracy in traning: 0.9246
 Final accuracy in validation: 0.8994
 ![plot](./picture/test_dataset_evaluation.png)
 
+
+## Deployment of the Model using Flask
+
+3 files required:
+1. model.py 
+2. app.py (server)
+3. request.py
+
+#### model.py:
+Develop and train the model.
+
+#### app.py:
+Code to handle POST requests and return the results.
+```
+app = Flask(__name__)
+model = pickle.load(open('model.pkl','rb'))
+
+@app.route('/predict', methods=['POST'])
+def predict():
+    string_features = [x for x in request.form.values()]
+    prediction = model.predict(string_features[0])
+    return render_template('index.html', prediction_text='Correct sentence should be: {}'.format(prediction))
+
+@app.route('/results', methods=['POST'])
+def results():
+    data = request.get_json(force=True)
+    prediction = model.predict([np.array(list(data.values()))])
+    return jsonify(prediction)
+```    
+
+#### request.py:
+Send requests with the features to the server and receive the results.
+Used requests library to make post requests. requests.post() takes URL and the data to be passed in the POST 
+request and the returned results from the servers are stored into the variable r and printed by r.json().
+
+
 ## Reference
 
 "Towards better decoding and language model integration in sequence to sequence models" (Jan Chorowski, Navdeep Jaitly) https://arxiv.org/abs/1612.02695
