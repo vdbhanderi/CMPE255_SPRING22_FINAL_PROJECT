@@ -82,11 +82,6 @@ def predict():
     prediction = model.predict(string_features[0])
     return render_template('index.html', prediction_text='Correct sentence should be: {}'.format(prediction))
 
-@app.route('/results', methods=['POST'])
-def results():
-    data = request.get_json(force=True)
-    prediction = model.predict([np.array(list(data.values()))])
-    return jsonify(prediction)
 ```    
 
 #### request.py:
