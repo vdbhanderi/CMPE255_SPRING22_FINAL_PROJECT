@@ -76,11 +76,20 @@ Code to handle POST requests and return the results.
 app = Flask(__name__)
 model = pickle.load(open('model.pkl','rb'))
 
+# For rendering results on HTML GUI
 @app.route('/predict', methods=['POST'])
 def predict():
     string_features = [x for x in request.form.values()]
     prediction = model.predict(string_features[0])
     return render_template('index.html', prediction_text='Correct sentence should be: {}'.format(prediction))
+    
+# For direct API calls trought request
+
+@app.route('/results', methods=['POST'])
+def results():
+    data = request.get_json(force=True)
+    prediction = model.predict([np.array(list(data.values()))])
+    return jsonify(prediction)
 
 ```    
 
