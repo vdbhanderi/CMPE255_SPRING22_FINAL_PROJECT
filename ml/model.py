@@ -36,7 +36,7 @@ class textCorrectionModel:
 
     def _loadModel(self) -> None:
         self.model = keras.models.load_model(
-            'ml/char_level_accuracy_84_3lstm_rnn')
+            'ml/char_level_accuracy_89_3lstm_rnn')
 
     def deTokenize(self, tokenizer, prediction):
         index_to_words = {id: word for word,
