@@ -5,7 +5,29 @@ from keras.preprocessing.sequence import pad_sequences
 import numpy as np
 import os
 os.environ["CUDA_VISIBLE_DEVICES"] = "-1"
-os.environ['TF_CPP_MIN_LOG_LEVEL']='3'
+os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
+
+
+"""
+Summary:
+
+just call the class and fill in the input_string
+
+import: 
+
+from ml.model import textCorrectionModel
+
+running:
+
+input_string = "wadeye residents eskeing return to outstaitosn"
+model = textCorrectionModel()
+print("model prediction: \n", model.predict(input_string))
+
+Returns:
+    _type_: String
+"""
+
+
 class textCorrectionModel:
     def __init__(self) -> None:
         self.max_length = 74
@@ -42,22 +64,3 @@ class textCorrectionModel:
         detoken_prediction = self.deTokenize(text_tokenizer, prediction[0])
 
         return detoken_prediction
-
-"""
-Summary:
-
-just call the class and fill in the input_string
-
-import: 
-
-from ml.model import textCorrectionModel
-
-running:
-
-input_string = "wadeye residents eskeing return to outstaitosn"
-model = textCorrectionModel()
-print("model prediction: \n", model.predict(input_string))
-
-Returns:
-    _type_: String
-"""
