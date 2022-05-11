@@ -1,6 +1,6 @@
 # CMPE255_SPRING22_FINAL_PROJECT
 
-Team Name - Team Globus
+## Team Name - Team Globus
 
 Group Members -
 
