@@ -47,7 +47,7 @@ Using char level vocabulary for text correction.
 ![plot](/picture/vocabuary_graph.png)
 
 Trying the first experiement model using Embedding and Bidrectional LSTM (Long Short Term Memory)
-![plot](\picture\bid_rnn_model.png)
+![plot](./picture/bid_rnn_model.png)
 
 Next trying the second experiement model using Embedding with seq2seq (encoding layer and decoding layer)
 ![plot](./picture/emb_lstm_seq2seq_model.png)
