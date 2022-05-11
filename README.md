@@ -14,14 +14,14 @@ https://www.kaggle.com/datasets/samarthagarwal23/spelling-mistake-data-1mn
 
 ## Requirement and Version
 
-Using device that has GPU memory is greater than 8GB
-
+Using device that has GPU memory is greater than 8GB for training
+```
 pipenv ==2022.1.8
 tensorflow ==2.8.0
 numpy ==1.21.6
 Flask ==2.1.2
 flask-ngrok ==0.0.25
-
+```
 ## Instruction
 
 ```
