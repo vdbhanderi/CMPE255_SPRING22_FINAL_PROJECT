@@ -98,6 +98,8 @@ Send requests with the features to the server and receive the results.
 Used requests library to make post requests. requests.post() takes URL and the data to be passed in the POST 
 request and the returned results from the servers are stored into the variable r and printed by r.json().
 
+## Future work
+Training the model with data and preform word level correction which will do the grammar correction.
 
 ## Reference
 
