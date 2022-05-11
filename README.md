@@ -99,7 +99,7 @@ Used requests library to make post requests. requests.post() takes URL and the d
 request and the returned results from the servers are stored into the variable r and printed by r.json().
 
 ## Future work
-Training the model with data and preform word level correction which will do the grammar correction.
+Training the model with data and perform word level correction which will do the grammar correction.
 
 ## Reference
 
